@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TeamController {
 
     private TeamService teamService;
@@ -21,6 +21,11 @@ public class TeamController {
     @RequestMapping(value = "/teams", method = RequestMethod.GET)
     public List<Team> Teams() {
         return (List<Team>) teamService.listAll();
+    }
+
+    @RequestMapping(value = "/teams/{id}", method = RequestMethod.GET)
+    public Team findById(@PathVariable Long id) {
+        return (Team) teamService.getById(id);
     }
 
     @RequestMapping(value = "/teams", method = RequestMethod.POST)

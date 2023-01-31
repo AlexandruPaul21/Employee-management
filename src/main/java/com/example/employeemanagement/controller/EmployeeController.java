@@ -22,6 +22,11 @@ public class EmployeeController {
         return (List<Employee>) employeeService.listAll();
     }
 
+    @RequestMapping(value = "/employees/{id}", method = RequestMethod.GET)
+    public Employee getEmployeeById(@PathVariable Long id) {
+        return (Employee) employeeService.getById(id);
+    }
+
     @RequestMapping(value = "/employees", method = RequestMethod.POST)
     public void addEmployee(@RequestBody Employee employee) {
         employeeService.save(employee);
