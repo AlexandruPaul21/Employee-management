@@ -29,4 +29,14 @@ public class TeamService implements AbstractService<Team> {
     public Team save(Team team) {
         return teamRepository.save(team);
     }
+
+    @Override
+    public Team update(Team team) {
+        return teamRepository.save(team);
+    }
+
+    @Override
+    public void delete(Long id) {
+        teamRepository.deleteById(id);
+    }
 }

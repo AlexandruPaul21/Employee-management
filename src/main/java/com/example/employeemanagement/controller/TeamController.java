@@ -32,4 +32,14 @@ public class TeamController {
     public void addEmployee(@RequestBody Team team) {
         teamService.save(team);
     }
+
+    @RequestMapping(value = "/teams", method = RequestMethod.PUT)
+    public void editTeam(@RequestBody Team team) {
+        teamService.update(team);
+    }
+
+    @RequestMapping(value = "/teams/{id}", method = RequestMethod.DELETE)
+    public void deleteTeam(@PathVariable Long id) {
+        teamService.delete(id);
+    }
 }

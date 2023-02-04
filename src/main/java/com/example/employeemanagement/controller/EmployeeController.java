@@ -31,4 +31,14 @@ public class EmployeeController {
     public void addEmployee(@RequestBody Employee employee) {
         employeeService.save(employee);
     }
+
+    @RequestMapping(value = "/employees", method = RequestMethod.PUT)
+    public void updateEmployee(@RequestBody Employee employee) {
+        employeeService.update(employee);
+    }
+
+    @RequestMapping(value = "/employees/{id}", method = RequestMethod.DELETE)
+    public void deleteEmployee(@PathVariable Long id) {
+        employeeService.delete(id);
+    }
 }

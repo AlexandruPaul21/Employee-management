@@ -29,4 +29,14 @@ public class EmployeeService implements AbstractService<Employee> {
     public Employee save(Employee employee) {
         return employeeRepository.save(employee);
     }
+
+    @Override
+    public Employee update(Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
+    @Override
+    public void delete(Long id) {
+        employeeRepository.deleteById(id);
+    }
 }
